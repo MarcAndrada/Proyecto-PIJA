@@ -139,7 +139,7 @@ public class MovementController : MonoBehaviour
     {
 
         if (movementInput != Vector3.zero)
-            rb.velocity = new Vector3(movementInput.x, 0, movementInput.z) * airSpeed + new Vector3(0, rb.velocity.y, 0);
+            rb.AddForce(new Vector3(movementInput.x, 0, movementInput.z) * airSpeed * Time.fixedDeltaTime, ForceMode.Force);
     }
 
     

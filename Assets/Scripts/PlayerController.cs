@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("enabled?");
         moveAction.action.started += SetMovmentValues;
         moveAction.action.performed += SetMovmentValues;
         moveAction.action.canceled += SetMovmentValues;
@@ -57,8 +56,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("disabled?");
-
         moveAction.action.started -= SetMovmentValues;
         moveAction.action.performed -= SetMovmentValues;
         moveAction.action.canceled -= SetMovmentValues;
@@ -70,13 +67,11 @@ public class PlayerController : MonoBehaviour
     #region Input
     private void SetMovmentValues(InputAction.CallbackContext obj)
     {
-        Debug.Log("EING?");
         //Guardamos el valor de los inputs de movimiento
         movementCont.recibedInputs = obj.ReadValue<Vector2>();
     }
     private void Jump(InputAction.CallbackContext obj)
     {
-        Debug.Log("JOMP?");
         movementCont.Jump();
     }
 
